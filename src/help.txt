@@ -1,0 +1,118 @@
+Swagger
+Video
+Host
+send mail
+github.com
+unittests
+
+
+@Singleton
+
+@require_basic_auth
+
+classmethod
+
+INSERT INTO `items`(
+    `item_id`,
+    `item_name`,
+    `item_desc`,
+    `item_base_price`,
+    `item_bid_start_date`,
+    `item_bid_end_date`,
+    `item_created_date`
+)
+VALUES(
+    NULL,
+    'Sony Television',
+    '50 inches sony TV',
+    '25',
+    '2019-07-02',
+    '2019-07-04',
+    CURRENT_TIMESTAMP
+);
+
+ALTER TABLE `ki_connect_2`.`items` 
+CHANGE COLUMN `item_bid_price` `item_base_price` DECIMAL(10,4) NOT NULL ;
+
+
+    MyTables.TBL_USERS = "users"
+    MyTables.TBL_USER_ROLES = "user_roles"
+    MyTables.TBL_ITEMS = "items"
+    MyTables.TBL_ITEMS_BIDDED = "items_sold"
+
+/Applications/MAMP/Library/bin/mysql -u root -p 
+
+/Applications/MAMP/Library/bin/mysql --version
+
+
+
+[]
+
+!=
+*
+
+
+19:31:31	select user_id, item_id,item_bidder_price, max(item_bid_date) from ki_connect_2.items_bidded  group by user_id,item_id LIMIT 0, 1000	Error Code: 1055. Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'ki_connect_2.items_bidded.item_bidder_price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by	0.0022 sec
+
+
+
+
+
+/usr/local/mysql/bin/mysql_config
+
+/Applications/MAMP/Library/bin/mysql_config
+
+
+
+
+
+SELECT p1.*
+FROM ki_connect_2.items_bidded p1
+WHERE item_bid_date = (SELECT MAX(p2.item_bid_date)
+              FROM ki_connect_2.items_bidded p2 
+              WHERE p1.user_id = p2.user_id) 
+ORDER BY item_bidder_price asc;
+
+#
+
+
+SELECT p1.*
+FROM ki_connect_2.items_bidded p1
+WHERE item_bid_date = (SELECT MAX(p2.item_bid_date)
+              FROM ki_connect_2.items_bidded p2 
+              WHERE p1.user_id = p2.user_id and p2.item_id=2) 
+ORDER BY item_bidder_price asc, item_bid_date desc  limit 1;
+
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'shiza123';
+
+
+
+Hallo Fabian,
+
+I am also equally interested and admired by the Caseable core value as Innovation.
+I love innovation and have won may awards in Yahoo! and McAfee for my Innovation in the Consumer Group and there are lots of ideas have been turned into products.
+
+I am very much excited and would like to take this further and you can reach me any of your convenient time.
+
+Few of the products I have developed in consumer group and proud to share with you as follows.
+
+1. https://www.youtube.com/watch?v=AX2xMJ9wArE   currently working on this in Mcafee 
+2. https://www.decathlon.in/  single handled and built right from requirement to deployment 
+
+
+Thanks,
+shafeequ Ahmed
+
+
+Bidder ::  Get Items List
+
+Auctioner :: Add Item
+
+
+
+
+SELECT p1.* FROM items_bidded p1 			WHERE item_bid_date = (SELECT MAX(p2.item_bid_date) 			              FROM ki_connect_2.items_bidded p2  			              WHERE p1.user_id = p2.user_id and p2.item_id=1) 			ORDER BY item_bidder_price asc, item_bid_date asc  limit 1;SELECT p1.* 			FROM items_bidded p1 			WHERE item_bid_date = (SELECT MAX(p2.item_bid_date) 			              FROM ki_connect_2.items_bidded p2  			              WHERE p1.user_id = p2.user_id and p2.item_id=1) 			ORDER BY item_bidder_price asc, item_bid_date asc  limit 1;
+
+
