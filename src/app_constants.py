@@ -4,6 +4,10 @@ class AppConstants:
 	HTTP_RESOURCE_CREATED = 201
 	USERS_LIST = {}
 	ROLES = {  "auctioner" : 1, "bidder" : 2 }
+	DB_HOST = "localhost"
+	DB_NAME = "ki_connect_2"
+	DB_USER = "root"
+	DB_PWD="shiza123"
 
 
 

@@ -3,6 +3,10 @@ from collections import namedtuple
 from itertools import repeat
 
 from utils.helper import Singleton
+import sys, os
+# SRC_PATH =  (os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# sys.path.insert(0,SRC_PATH)
+from app_constants import AppConstants
 
 
 class MyTables:
@@ -19,7 +23,7 @@ class SimpleMysql:
     cur = None
     conf = None
 
-    def __init__(self, host="localhost", db="ki_connect_2", user="root", passwd="shiza123", **kwargs):
+    def __init__(self, host=AppConstants.DB_HOST, db=AppConstants.DB_NAME, user=AppConstants.DB_USER, passwd=AppConstants.DB_PWD, **kwargs):
         self.conf = kwargs
         self.conf["keep_alive"] = kwargs.get("keep_alive", False)
         self.conf["charset"] = kwargs.get("charset", "utf8")
