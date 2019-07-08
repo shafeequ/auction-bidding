@@ -6,7 +6,7 @@ auction and bidding system very intutive and very simple , allows multiple times
 ```
 pip install tornado
 pip install mysql-connector
-pip install pytest
+pip install pytest, simplejson
 ```
 
 # Application Setup
